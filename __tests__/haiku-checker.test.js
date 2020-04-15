@@ -11,4 +11,8 @@ describe("haiku checker", () => {
   test("haiku method verifyLines1and3() are returning true on a number of 5 or less", ()=>{
     expect(haiku.verifyLines1and3(line1)).toBeTruthy()
   })
+  test("haiku method verifyLines1and3() are returning false on a number of 5 or more", ()=>{
+    line1 += "hello world"
+    expect(haiku.verifyLines1and3(line1)).toBeFalsy()
+  })
 });
