@@ -22,4 +22,8 @@ describe("haiku checker", () => {
     line2 += " hello world";
     expect(haiku.verifyLine2(line2)).toBeFalsy();
   });
+  test("haiku method countSyllables() is counting the vowels of the word passed into it", () => {
+    expect(haiku.countSyllables("hello")).toEqual(2);
+    
+  });
 });

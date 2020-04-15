@@ -15,8 +15,6 @@ export class Haiku {
   }
   verifyLines1and3(line) {
     let splitLine = this.splitLines(line);
-    console.log(splitLine.length);
-    
     if (splitLine.length <= 5) {
       return true;
     } else return false; 
@@ -26,5 +24,16 @@ export class Haiku {
     if (splitLine.length <= 7) {
       return true
     } else return false
+  }
+  countSyllables(str){
+    let vowelArr = ['a','e','i','o','u'];
+    str = str.toLowerCase()
+    let counter = 0; 
+    for(let i=0; i<str.length; i++){
+      if(vowelArr.includes(str[i])){
+        counter++
+      }
+    }
+    return counter;
   }
 }
