@@ -24,6 +24,8 @@ describe("haiku checker", () => {
   });
   test("haiku method countSyllables() is counting the vowels of the word passed into it", () => {
     expect(haiku.countSyllables("hello")).toEqual(2);
-    
   });
+  test("haiku method countSyllables() is not counting syllables of words ending with 'e'", ()=> {
+    expect(haiku.countSyllables("home")).toEqual(1);
+  })
 });

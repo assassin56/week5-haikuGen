@@ -30,8 +30,16 @@ export class Haiku {
     str = str.toLowerCase()
     let counter = 0; 
     for(let i=0; i<str.length; i++){
-      if(vowelArr.includes(str[i])){
-        counter++
+       if(vowelArr.includes(str[i])){
+        // checking if we are at the end of the word when we find  a vowel then see if it's an "e"
+        if(i+1 === str.length){
+          if(!str[i] === "e"){
+            counter++
+          }
+        }else{
+          counter++
+        }
+        
       }
     }
     return counter;
