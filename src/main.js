@@ -15,13 +15,16 @@ export class Haiku {
   }
   verifyLines1and3(line) {
     let splitLine = this.splitLines(line);
+    console.log(splitLine.length);
+    
     if (splitLine.length <= 5) {
       return true;
     } else return false; 
   }
-  // verifyLine2() {
-  //   if (splitLine.length <= 7) {
-  //     return true;
-  //   } else return false;
-  // }
+  verifyLine2(line) {
+    let splitLine = this.splitLines(line);
+    if (splitLine.length <= 7) {
+      return true
+    } else return false
+  }
 }

@@ -8,11 +8,18 @@ describe("haiku checker", () => {
   test("haiku method splitLines() are spliting the lines into arrays and returning them", () => {
     expect(haiku.splitLines(line1)).toEqual(["An", "old", "silent", "pond"]);
   });
-  test("haiku method verifyLines1and3() are returning true on a number of 5 or less", ()=>{
-    expect(haiku.verifyLines1and3(line1)).toBeTruthy()
-  })
-  test("haiku method verifyLines1and3() are returning false on a number of 5 or more", ()=>{
-    line1 += "hello world"
-    expect(haiku.verifyLines1and3(line1)).toBeFalsy()
-  })
+  test("haiku method verifyLines1and3() are returning true on a number of 5 or less", () => {
+    expect(haiku.verifyLines1and3(line1)).toBeTruthy();
+  });
+  test("haiku method verifyLines1and3() are returning false on a number of 5 or more", () => {
+    line1 += " hello world";
+    expect(haiku.verifyLines1and3(line1)).toBeFalsy();
+  });
+  test("haiku method verifyLine2() are returning true on a number of 7 or less", () => {
+    expect(haiku.verifyLine2(line2)).toBeTruthy();
+  });
+  test("haiku method verifyLine2() are returning false on a number of 7 or more", () => {
+    line2 += " hello world";
+    expect(haiku.verifyLine2(line2)).toBeFalsy();
+  });
 });
