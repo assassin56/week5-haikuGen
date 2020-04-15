@@ -33,7 +33,7 @@ export class Haiku {
        if(vowelArr.includes(str[i])){
         // checking if we are at the end of the word when we find  a vowel then see if it's an "e"
         if(i+1 === str.length){
-          if(!str[i] === "e"){
+          if(str[i] != "e"){
             counter++
           }
         }else{
