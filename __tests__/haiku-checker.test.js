@@ -1,11 +1,14 @@
 import { Haiku } from "./../src/main.js";
 
 describe("haiku checker", () => {
-  beforeAll(()=>{
-      let line1 = "An old silent pond"
-      let line2 = "A frog jumps into the pond"
-      let line3 = "Splash! Silence again."
-      let haiku = new Haiku(line1, line2, line3)})
-
-
+  let line1 = "An old silent pond";
+  let line2 = "A frog jumps into the pond";
+  let line3 = "Splash! Silence again.";
+  let haiku = new Haiku(line1, line2, line3);
+  test("haiku method splitLines() are spliting the lines into arrays and returning them", () => {
+    expect(haiku.splitLines(line1)).toEqual(["An", "old", "silent", "pond"]);
+  });
+  test("haiku method verifyLines1and3() are returning true on a number of 5 or less", ()=>{
+    expect(haiku.verifyLines1and3(line1).toBeLessThan(5))
+  })
 });
