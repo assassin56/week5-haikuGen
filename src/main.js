@@ -45,6 +45,12 @@ export class Haiku {
         } else if (vowelArr.includes(str[i + 1])) {
           counter++;
           i++;
+        } else if (
+          str.length === (i + 2) &&
+          str[i] === "e" &&
+          str[i - 1] === "l" &&
+          vowelArr.includes(str[i - 2])
+        ) {
         } else {
           counter++;
         }
