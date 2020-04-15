@@ -9,6 +9,6 @@ describe("haiku checker", () => {
     expect(haiku.splitLines(line1)).toEqual(["An", "old", "silent", "pond"]);
   });
   test("haiku method verifyLines1and3() are returning true on a number of 5 or less", ()=>{
-    expect(haiku.verifyLines1and3(line1).toBeLessThan(5))
+    expect(haiku.verifyLines1and3(line1)).toBeTruthy()
   })
 });

@@ -13,14 +13,15 @@ export class Haiku {
     let lineArray = line.split(" ");
     return lineArray;
   }
-  verifyLines1and3() {
-    if (line.length <= 5) {
+  verifyLines1and3(line) {
+    let splitLine = this.splitLines(line);
+    if (splitLine.length <= 5) {
       return true;
     } else return false; 
   }
-  verifyLine2() {
-    if (line.length <= 7) {
-      return true;
-    } else return false;
-  }
+  // verifyLine2() {
+  //   if (splitLine.length <= 7) {
+  //     return true;
+  //   } else return false;
+  // }
 }
