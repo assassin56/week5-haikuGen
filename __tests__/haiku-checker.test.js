@@ -28,4 +28,10 @@ describe("haiku checker", () => {
   test("haiku method countSyllables() is not counting syllables of words ending with 'e'", ()=> {
     expect(haiku.countSyllables("home")).toEqual(1);
   })
+  test("haiku method countSyllables() is not counting syllables of words with multiple vowels in congreancy", ()=> {
+    expect(haiku.countSyllables("ACQUAINTANCE")).toEqual(3);
+  })
+  test("haiku method countSyllables() is only counting for 1 syllable if a word ends in 'le' or 'les' and the letter before 'l' is a constant", ()=> {
+    expect(haiku.countSyllables("automobiles")).toEqual(4);
+  })
 });

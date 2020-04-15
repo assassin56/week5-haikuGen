@@ -17,33 +17,37 @@ export class Haiku {
     let splitLine = this.splitLines(line);
     if (splitLine.length <= 5) {
       return true;
-    } else return false; 
+    } else return false;
   }
   verifyLine2(line) {
     let splitLine = this.splitLines(line);
     if (splitLine.length <= 7) {
-      return true
-    } else return false
+      return true;
+    } else return false;
   }
-  countSyllables(str){
-    let vowelArr = ['a','e','i','o','u'];
-    str = str.toLowerCase()
-    let counter = 0; 
-    for(let i=0; i<str.length; i++){
-       if(vowelArr.includes(str[i])){
+  countSyllables(str) {
+    let vowelArr = ["a", "e", "i", "o", "u"];
+    str = str.toLowerCase();
+    let counter = 0;
+    for (let i = 0; i < str.length; i++) {
+      if (vowelArr.includes(str[i])) {
         // checking if we are at the end of the word when we find  a vowel then see if it's an "e"
-        if(i+1 === str.length){
-          if(str[i] != "e"){
-            counter++
+        if (i + 1 === str.length) {
+          if (str[i] != "e") {
+            counter++;
           }
-        }else if  (vowelArr.includes(str[i+1]) && vowelArr.includes(str+2)){
-          counter++
-          i += 2
-        }else if (vowelArr.includes(str[i+1])){
-          counter++
-          i++ 
+        } else if (
+          vowelArr.includes(str[i + 1]) &&
+          vowelArr.includes(str[i + 2])
+        ) {
+          counter++;
+          i += 2;
+        } else if (vowelArr.includes(str[i + 1])) {
+          counter++;
+          i++;
+        } else {
+          counter++;
         }
-        
       }
     }
     return counter;
