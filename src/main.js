@@ -5,7 +5,7 @@ import $ from "jquery";
 
 export class Haiku {
   constructor(line1, line2, line3) {
-    this.fistLine = line1;
+    this.firstLine = line1;
     this.secondLine = line2;
     this.thirdLine = line3;
   }
@@ -26,7 +26,7 @@ export class Haiku {
     } else return false;
   }
   countSyllables(str) {
-    let vowelArr = ["a", "e", "i", "o", "u"];
+    let vowelArr = ["a", "e", "i", "o", "u",'y'];
     str = str.toLowerCase();
     let counter = 0;
     for (let i = 0; i < str.length; i++) {
@@ -57,5 +57,14 @@ export class Haiku {
       }
     }
     return counter;
+  }
+  returnHaiku() {
+    if(
+      this.verifyLines1and3(this.firstLine) &&
+      this.verifyLines1and3(this.thirdLine) &&
+      this.verifyLine2(this.secondLine)
+    ){
+      return true;
+    } else false;
   }
 }
