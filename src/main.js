@@ -36,8 +36,12 @@ export class Haiku {
           if(str[i] != "e"){
             counter++
           }
-        }else{
+        }else if  (vowelArr.includes(str[i+1]) && vowelArr.includes(str+2)){
           counter++
+          i += 2
+        }else if (vowelArr.includes(str[i+1])){
+          counter++
+          i++ 
         }
         
       }
