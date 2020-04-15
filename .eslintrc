@@ -1,0 +1,18 @@
+{
+  "rserOptions": {
+    "emaVersion": 2018,
+    "sourceType": "module"
+  },
+  "etends": "eslint:recommended",
+  "ev": {
+    "es6": true,
+    "browser": true,
+    "uery": true
+  },
+  "rles": {
+    "semi": 1,
+    "indent": ["warn", 2],
+    "-console": "warn",
+    "n-debugger": "warn"
+  }
+}
