@@ -34,14 +34,15 @@ describe("haiku checker", () => {
   test("haiku method countSyllables() is only counting for 1 syllable if a word ends in 'le' or 'les' and the letter before 'l' is a constant", ()=> {
     expect(haiku.countSyllables("automobiles")).toEqual(4);
   })
-  test("haiku method returnHaiku() is returning true on lines with correct line lengths", ()=> {
+  // test("haiku method returnHaiku() is returning false on lines with correct line lengths but incorrect syllabol lengths", ()=> {
+  //   haiku.firstLine += " ACQUAINTANCE"
+  //   expect(haiku.returnHaiku()).toBeTruthy();
+  // })
+  test("haiku method returnHaiku() is returning true on Hakiu lines with correct syllabols in each line", ()=> {
     expect(haiku.returnHaiku()).toBeTruthy();
   })
   test("haiku method returnHaiku() is returning false on lines with incorrect line lengths", ()=> {
     haiku.firstLine += " hello world";
     expect(haiku.returnHaiku()).toBeFalsy();
-  })
-  test("haiku method returnHaiku() is returning true on Hakiu lines with correct syllabols in each line", ()=> {
-    expect(haiku.returnHaiku()).toBeTruthy();
   })
 });

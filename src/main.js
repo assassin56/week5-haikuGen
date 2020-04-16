@@ -26,7 +26,7 @@ export class Haiku {
     } else return false;
   }
   countSyllables(str) {
-    let vowelArr = ["a", "e", "i", "o", "u",'y'];
+    let vowelArr = ["a", "e", "i", "o", "u", "y"];
     str = str.toLowerCase();
     let counter = 0;
     for (let i = 0; i < str.length; i++) {
@@ -46,7 +46,7 @@ export class Haiku {
           counter++;
           i++;
         } else if (
-          str.length === (i + 2) &&
+          str.length === i + 2 &&
           str[i] === "e" &&
           str[i - 1] === "l" &&
           vowelArr.includes(str[i - 2])
@@ -59,12 +59,21 @@ export class Haiku {
     return counter;
   }
   returnHaiku() {
-    if(
+    if (
       this.verifyLines1and3(this.firstLine) &&
       this.verifyLines1and3(this.thirdLine) &&
       this.verifyLine2(this.secondLine)
-    ){
-      return true;
-    } else false;
+    ) {
+      // let line1Array = this.splitLines(this.firstLine);
+      // let line2Array = this.splitLines(this.secondLine);
+      // let line3Array = this.splitLines(this.thirdLine);
+      // if (
+      //   this.verifyLines1and3(line1Array) &&
+      //   this.verifyLine2(line2Array) &&
+      //   this.verifyLines1and3(line3Array)
+      // ) {
+        return true;
+        // }
+    } else return false;
   }
 }
