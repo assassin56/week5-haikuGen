@@ -37,8 +37,11 @@ describe("haiku checker", () => {
   test("haiku method returnHaiku() is returning true on lines with correct line lengths", ()=> {
     expect(haiku.returnHaiku()).toBeTruthy();
   })
-  test("haiku method returnHaiku() is returning true on lines with correct line lengths", ()=> {
+  test("haiku method returnHaiku() is returning false on lines with incorrect line lengths", ()=> {
     haiku.firstLine += " hello world";
     expect(haiku.returnHaiku()).toBeFalsy();
+  })
+  test("haiku method returnHaiku() is returning true on Hakiu lines with correct syllabols in each line", ()=> {
+    expect(haiku.returnHaiku()).toBeTruthy();
   })
 });
